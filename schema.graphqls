@@ -1,0 +1,22 @@
+directive @requiresFeature(
+    featureName: String!
+) on OBJECT | FIELD_DEFINITION
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type NewType @requiresFeature(featureName: "type-test")  {
+    name: String
+    newField (index: Int): String @requiresFeature(featureName: "field-test")
+}
+
+type Query {
+    ping: String!
+    getNewType: NewType
+}
+
+type Mutation {
+    ping: String!
+}

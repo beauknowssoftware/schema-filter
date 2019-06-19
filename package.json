@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "devDependencies": {
+    "graphql": "14.3.1",
+    "graphql-tools": "4.0.4"
+  }
+}
